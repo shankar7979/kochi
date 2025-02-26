@@ -6,6 +6,7 @@ spring:
     hibernate:
 #      ddl-auto:  create
   datasource:
+    database-platform:  org.hibernate.dialect.MySQL8Dialect
     url: jdbc:mysql://localhost:3306/db2
     username: root
     password: mysql
@@ -13,3 +14,7 @@ spring:
 
 server:
   port:  8090
+
+
+
+#spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect  
