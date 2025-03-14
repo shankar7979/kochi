@@ -11,6 +11,7 @@ ENTRYPOINT ["java","-jar","/home/app/target/app1.jar"]
 
 #docker build -t jpa1 .
 #docker run -p 7070:7070 jpa1   -- this will run internal port 7070 to outer 7070
+# http://localhost:7070/allEmployee
 
 #docker run -p 8080:7070 jpa1 -- this will run internal port 7070 to outer 7070
 
