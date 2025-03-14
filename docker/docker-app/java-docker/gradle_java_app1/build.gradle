@@ -1,0 +1,32 @@
+plugins {
+    // Apply the java-library plugin to add support for Java Library
+//    id 'java-library'
+    id 'application'
+}
+
+repositories {
+    // Use jcenter for resolving dependencies.
+    // You can declare any Maven/Ivy/file repository here.
+    jcenter()
+}f
+
+dependencies {
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
+
+    implementation 'com.google.guava:guava:28.0-jre'
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.22'
+    testImplementation 'junit:junit:4.12'
+}
+
+
+application {
+//    mainClassName = 'GradlePrj1.Library'
+    //mainClassName = 'GradlePrj1.Program1'
+     mainClassName = 'GradlePrj1.Factorial'
+   // mainClassName = 'GradlePrj1.Hello'
+}
+
+
+run{
+    standardInput = System.in
+}
