@@ -17,7 +17,7 @@ import java.util.Set;
 public class Main  implements CommandLineRunner {
 
     public static void main(String[] args) {
-        SpringApplication.run(Main.class,args);
+        SpringApplication.run(Main. class,args);
     }
 
     @Autowired

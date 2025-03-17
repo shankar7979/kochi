@@ -18,7 +18,7 @@ services:
   db:
     image: mysql:latest
     environment:
-      MYSQL_DATABASE: db1
+      MYSQL_DATABASE: mysql
       MYSQL_USER: shankar
       MYSQL_PASSWORD: mysql
       MYSQL_ROOT_PASSWORD: mysql
