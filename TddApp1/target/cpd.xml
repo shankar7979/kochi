@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd-cpd xmlns="https://pmd-code.org/schema/cpd-report"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         pmdVersion="7.7.0"
+         timestamp="2025-02-04T14:25:24.0851234+05:30"
+         version="1.0.0"
+         xsi:schemaLocation="https://pmd-code.org/schema/cpd-report https://pmd.github.io/schema/cpd-report_1_0_0.xsd">
+   <file path="C:\Users\2383505\Documents\workspace-spring-tool-suite-4-4.27.0.RELEASE\TddApp1\src\main\java\cts\com\model\Address.java"
+         totalNumberOfTokens="57"/>
+   <file path="C:\Users\2383505\Documents\workspace-spring-tool-suite-4-4.27.0.RELEASE\TddApp1\src\main\java\cts\com\model\Calculator.java"
+         totalNumberOfTokens="69"/>
+   <file path="C:\Users\2383505\Documents\workspace-spring-tool-suite-4-4.27.0.RELEASE\TddApp1\src\main\java\cts\com\model\Car.java"
+         totalNumberOfTokens="19"/>
+   <file path="C:\Users\2383505\Documents\workspace-spring-tool-suite-4-4.27.0.RELEASE\TddApp1\src\main\java\cts\com\model\Employee.java"
+         totalNumberOfTokens="108"/>
+   <file path="C:\Users\2383505\Documents\workspace-spring-tool-suite-4-4.27.0.RELEASE\TddApp1\src\main\java\cts\com\model\ICalculator.java"
+         totalNumberOfTokens="32"/>
+   <file path="C:\Users\2383505\Documents\workspace-spring-tool-suite-4-4.27.0.RELEASE\TddApp1\src\main\java\cts\com\model\User.java"
+         totalNumberOfTokens="184"/>
+   <file path="C:\Users\2383505\Documents\workspace-spring-tool-suite-4-4.27.0.RELEASE\TddApp1\src\main\java\cts\com\model\UserTest1.java"
+         totalNumberOfTokens="82"/>
+</pmd-cpd>
