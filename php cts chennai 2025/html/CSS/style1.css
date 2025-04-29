@@ -1,0 +1,17 @@
+form {
+    margin-left: 300pt;
+    border: solid blue 20pt;
+    width: 40%;
+    padding: 10pt;
+    /* height: 170pt; */
+ }
+
+ label {
+    float: left;
+    width: 100pt;
+ }
+
+ input {
+    width: 140pt;
+ }
+</style>

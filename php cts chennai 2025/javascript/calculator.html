@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/style1.css'>
+    <style>
+        form {
+            border-radius: 25pt;
+            padding: 20pt;
+        }
+
+        input {
+            margin-top: 5pt;
+        }
+    </style>
+    <script src="script/script3.js">
+
+    </script>
+
+</head>
+
+<body>
+    <form>
+        <div>
+            <label>Enter No1 </label>
+            <input id="n1">
+        </div>
+        <div>
+            <label>Enter No2 </label>
+            <input id="n2">
+        </div>
+        <div>
+            <label>Select Operation</label>
+            <select id="operation" onchange="calculate()">
+                <option value=""></option>
+                <option value="addition">Addition</option>
+                <option value="subtraction">Subtraction</option>
+                <option value="multiplication">Multiplication</option>
+                <option value="division">Division</option>
+            </select>
+        </div>
+        <div>
+            <label>Result </label>
+            <input id="n3">
+        </div>
+
+    </form>
+
+    <div style="margin-top: 100pt;">
+        <div>
+            <img src="image/img1.gif" width="300" height="200" border="10pt" id="id1">
+        </div>
+        <div>
+            <button type="button" onclick="changeImage()"> change image</button>
+        </div>
+    </div>
+
+    <script>
+        function changeImage(){
+            var imgid=document.getElementById('id1');
+            imgid.width='100'         
+            imgid.height='70'
+            imgid.style.border='dotted'         
+            imgid.src='image/img2.jpg'
+        }
+    </script>
+
+</body>
+
+</html>

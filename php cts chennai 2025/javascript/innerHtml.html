@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+
+</head>
+<body>
+    <script>
+       function changeContent(){
+        //    document.getElementById('id1').innerHTML='<h2>we will learn sql too</h2>'
+           document.getElementById('id1').innerText='<h2>we will learn sql too</h2>'
+       }
+       var c=1;
+       function increment(){
+                 document.getElementById('id2').innerHTML='Count is '+c++
+       }
+       function decrement(){
+                 document.getElementById('id2').innerHTML='Count is '+c--
+       }
+    </script>
+
+    <div  id="id1" onclick="changeContent()">
+     we are learning javascript
+    </div>
+
+    <div style="border: solid;font-size: larger;margin: 50pt;padding: 30pt;color:blue;font-weight: bold;width: 30%;
+    " id="id2">
+            Count is 1
+    </div>
+    <div style="font-size: large;margin-left: 50pt;margin-top: 10pt;">
+    <button onclick="increment()">increment</button>
+    <button onclick="decrement()">decrement</button>
+    </div>
+    
+</body>
+</html>

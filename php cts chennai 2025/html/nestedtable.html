@@ -1,0 +1,120 @@
+<!-- Create nested table 
+   outside department table 
+             id     name 
+                  employee table
+                     id    name salary 
+
+
+make this for three department
+    1    training 
+           
+    2    transport
+           
+    3    development   -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        tr,
+        th,
+        td {
+            border: solid
+        }
+
+        .table1 {
+            border: solid;
+
+            margin-left: 400pt;
+            margin-top: 20pt;
+            padding: 20pt;
+            width: 40%;
+        }
+    </style>
+</head>
+
+<body>
+    <table class="table1">
+        <caption>department</caption>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>training</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <table>
+                    <tr>
+                        <th>id</th>
+                        <th>name</th>
+                        <th>salary</th>
+                    </tr>
+                    <tr>
+                        <td>10001</td>
+                        <td>amit kumar</td>
+                        <td>20000</td>
+                    </tr>
+                    <tr>
+                        <td>10002</td>
+                        <td>vimal kumar</td>
+                        <td>26000</td>
+                    </tr>
+                    <tr>
+                        <td>10003</td>
+                        <td>suresh kumar</td>
+                        <td>78000</td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                2
+            </td>
+            <td>
+                transport
+            </td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>
+                <table>
+                    <tr>
+                        <th>id</th>
+                        <th>name</th>
+                        <th>salary</th>
+                    </tr>
+                    <tr>
+                        <td>90001</td>
+                        <td>suresh sharma</td>
+                        <td>12000</td>
+                    </tr>
+                    <tr>
+                        <td>90002</td>
+                        <td>kamal kumar</td>
+                        <td>89000</td>
+                    </tr>
+                    <tr>
+                        <td>90003</td>
+                        <td>surendra kumar</td>
+                        <td>18000</td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

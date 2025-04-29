@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        @import url('css/style1.css');
+
+        form {
+            width: 60%;
+         height: 200pt;
+        }
+
+        label {
+            width: 280pt;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        console.log(/[a-z]{10}/g.test('ramkumar'))
+        console.log(/[a-z]{10}/g.test('ramkumarab'))
+        console.log(/[A-Z]{10}/g.test('ramkumarab'.toUpperCase()))
+        console.log(/[A-Z]{10}/g.test('ramkumarab'))
+        console.log(/[0-9]{10}/g.test('7665776789'))
+        console.log(/[0-9]{10}/g.test('766577678'))
+        console.log(/[0-9]{10}/g.test('766577678a'))
+        console.log(/\d{10}/g.test('7665776789'))
+
+        console.log(/\w{10}/g.test('ramKuMar12'))
+        console.log(/[a-z]{3}\s[a-z]{5}/g.test('ram kumar'))
+        console.log( /^(([a-z]|[A-Z])+\s([a-z]|[A-Z])+)$/.test('abcde hhabcd'))
+        console.log( /^(([a-z]|[A-Z])+\s([a-z]|[A-Z])+){5,20}$/.test('abcde hhabcd'))
+
+        function validate() {
+            var id = document.getElementById('id').value
+            var name = document.getElementById('name').value
+            var mobile = document.getElementById('mobile').value
+
+            /*      if(!id.match(/\d{5}/)){
+                    //alert('id must of 5 digit only')
+                    document.getElementById('id_err').innerHTML='id must of 5 digit only'
+                    return false
+                  }
+              */
+            if (!/\d{5}/.test(id)) {
+                document.getElementById('id_err').innerHTML = 'id.. must of 5 digit only'
+                return false
+            }
+            //  if(!/([a-z]|[A-Z]+)\s([a-z]|[A-Z]+)/.test(name)){
+            else if (!/([a-z]|[A-Z]+)\s([a-z]|[A-Z]+){5,20}/.test(name)) {
+                document.getElementById('name_err').innerHTML = 'invalid name'
+                return false
+            }
+            else if (!/^[7-9]\d{9}$/.test(mobile)) {
+                document.getElementById('mobile_err').innerHTML = 'invalid mobile no'
+                return false
+            }
+            else {
+                document.getElementById('user').style.border = 'solid yellow 20pt'
+                document.getElementById('user').style.backgroundColor = 'lightyellow'
+                document.getElementById('user').style.padding = '20pt'
+                document.getElementById('user').innerHTML = `<div> id is ${id}<div>
+             <div> name is ${name}<div>
+             <div> mobile no is ${mobile}<div>    `
+                return false
+                //  return true
+            }
+
+        }
+    </script>
+
+    <form onsubmit="return validate()">
+        <div>
+            <label>Enter Id (5 digit only)</label>
+            <!-- <input pattern="\d{5}" required  id="id"> -->
+            <input id="id">
+            <span id="id_err"></span>
+        </div>
+
+        <div>
+            <label>Enter Name (min 5 , max 20 character, two words)</label>
+            <input id="name">
+            <span id="name_err"></span>
+        </div>
+
+        <div>
+            <label>Enter Mobile No (10 digit , must start with 7 or 8 or 9)</label>
+            <input id="mobile">
+            <span id="mobile_err"></span>
+        </div>
+
+       
+        <div>
+            <button type="submit">Send</button>
+            <button type="reset">cancel</button>
+        </div>
+
+        <div id="user">
+
+        </div>
+
+    </form>
+
+
+</body>
+
+</html>

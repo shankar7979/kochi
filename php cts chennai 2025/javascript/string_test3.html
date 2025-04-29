@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script>
+        var a = '1000'
+        var b = 200
+        var c = b + eval(a)
+        console.log(' sum is ' + c)
+        var d = 1000
+
+        console.log('a == d ' + (a == d))
+        console.log('a === d ' + (a === d))
+        var date = new Date()
+        console.log('date is ' + date)
+        console.log('date is ' + (date.getDate() + '/' + (date.getMonth() + 1) + "/" + date.getFullYear()))
+        console.log(date.toDateString())
+        console.log(date.toLocaleDateString())
+        console.log(date.toTimeString())
+        console.log(date.toLocaleTimeString())
+
+        var str = "we are learning java script"
+        var email = "ram@gmail.com"
+
+        console.log(str.length)
+        console.log(str.toUpperCase())
+        console.log('character at 10 th position ' + str.charAt(9))
+
+        var position = email.indexOf('@')
+
+        if (position >= 0)
+            console.log('email is valid')
+        else
+            console.log('invalid email')
+
+        if (email.endsWith('.com'))
+            console.log('email is valid ends with .com')
+        else
+            console.log('invalid email')
+
+        var id = "cts_6567677676";
+        if (id.startsWith('cts')) {
+            console.log('valid  id starts with cts')
+        }
+        else {
+            console.log('invalid  id does not starts with cts')
+        }
+        // var ar=str.split(' ')
+        var ar=str.split(' ',3)
+        for (let index = 0; index < ar.length; index++) {
+            console.log(ar[index])
+        }
+        str = "we-are-learning-java-script"
+        ar=str.split('-')
+        console.log(ar)
+        var mystr=ar[0].concat(' ').concat(ar[1])
+        console.log('after concat '+mystr)        
+
+         console.log('substring from 3, 10'+str.substring(3,10))
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

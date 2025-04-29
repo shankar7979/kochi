@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body onload="myclock()">
+    <script>
+
+    //setTimeOut   --- call back function, call given function  after given time interval   
+
+    function alarm(){
+        alert('alarm is ringing ')
+    }
+
+    alert("alarm will called after 5 seconds ")
+    setTimeout('alarm()', 1000*5)
+    
+    //setInterval('alarm()', 1000*5)
+    // setInterval will call continuously after given time interval
+    function myclock(){
+      document.getElementById('clock').innerHTML=new Date().toLocaleTimeString()
+    }
+
+     setInterval('myclock()',1000)
+    </script>
+    <div id="clock" style="border:solid;margin-left:250pt ;margin-top: 100pt;color: blue;font-size: xx-large;width: 30%;">
+    
+    </div>
+</body>
+</html>

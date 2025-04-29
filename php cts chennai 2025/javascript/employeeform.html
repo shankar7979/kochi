@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/style1.css'>
+    <style>
+        button,input,
+        select {
+            margin-top: 5pt;
+        }
+        span{
+            color: red;
+        }
+        body{
+            background-color: antiquewhite;
+        }
+        span.class1{
+            color: blue;
+        }
+    </style>
+     
+</head>
+
+<body onload="myclock(), mydate()">
+<script>
+    setInterval('myclock()',1000)
+    setInterval('mydate()',1000)
+
+    function myclock(){
+      document.getElementById('clock').innerHTML=new Date().toLocaleTimeString()
+    }
+    function mydate(){
+      document.getElementById('date').innerHTML=new Date().toLocaleDateString()
+    }
+    
+    function validate(){
+        var id=document.getElementById('id').value
+        var name=document.getElementById('name').value
+        var gender=document.getElementsByName('gender')
+        var technology=document.getElementsByName('technology')
+        var city=document.getElementById('city').value
+
+        var gender_status=false
+        for (let index = 0; index < gender.length; index++) {
+            if(gender[index].checked){
+                gender_status=true;
+                break;
+            }
+        }
+        var technology_status=false
+        for (let index = 0; index < gender.length; index++) {
+            if(technology[index].checked){
+                technology_status=true;
+                break;
+            }
+        }
+
+        if(id==''){
+            //alert('id is blank')
+            document.getElementById('err_id').style.border='solid red'
+            document.getElementById('err_id').innerHTML='id is blank'
+            return false
+        }
+        else if(name==''){
+            alert('name is blank')
+            return false
+        }
+        else if(gender_status==false){
+            alert('gender is blank')
+            return false
+        }
+        else if(city==''){
+            alert('city is blank')
+            return false
+        }
+        else if(technology_status==false){
+            alert('select  technology ')
+            return false
+        }
+
+
+    }
+</script>
+
+    <form onsubmit="return validate()">
+        <span id="clock" class="class1">
+
+        </span>
+        <span style="float:right" id="date" class="class1">
+        
+        </span>
+        <div>
+            <label>Enter Id </label>
+            <input id="id" type="number">
+            <span id="err_id"></span>
+        </div>
+
+        <div>
+            <label>Enter Name </label>
+            <input id="name">
+        </div>
+
+        <div>
+            <label>Select Gender </label><br>
+            <input id="gender" name="gender" type="radio" value="male">Male<br>
+            <input id="gender" name="gender" type="radio" value="female">Female<br>
+        </div>
+
+        <div>
+            <label>Select Cities </label>
+            <select id="city" name="city">
+                <option value=""></option>
+                <option value="delhi">Delhi</option>
+                <option value="chennai">Chennai</option>
+                <option value="mumbai">Mumbai</option>
+                <option value="kolkotta">Kolkotta</option>
+            </select>
+        </div>
+        <div>
+            <label>Select Technologies</label><br>
+            <input type="checkbox" value="javascript" name="technology">javascript<br>
+            <input type="checkbox" value="python" name="technology">python<br>
+            <input type="checkbox" value="php" name="technology">php<br>
+            <input type="checkbox" value="angular" name="technology">angular<br>
+            <input type="checkbox" value="react" name="technology">react<br>
+            <input type="checkbox" value="datascience" name="technology">datascience<br>
+        </div>
+        <div>
+            <button type="submit">Send</button>
+            <button type="reset">Cancel</button>
+        </div>
+    </form>
+</body>
+
+</html>

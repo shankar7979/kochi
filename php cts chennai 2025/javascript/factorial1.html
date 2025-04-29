@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <script src='script/script2.js'>
+    </script>
+    <script>
+        function myfactorial() {
+            var c = document.getElementById('n1').value
+            var result = factorial(parseInt(c))
+            document.getElementById('n2').value = result
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <label>Enter a No </label>
+        <input type="number" id="n1">
+    </div>
+    <div>
+        <input type="button" onclick="myfactorial()" value="click">
+    </div>
+    <div>
+        <label> factorial result </label>
+        <input type="number" id="n2">
+    </div>
+
+</body>
+
+</html>

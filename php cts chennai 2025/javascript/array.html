@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script>
+        var ar = new Array(11, 2, 3, 40, 5, 1)
+        console.log(ar)
+        var ar1 = ar.concat(23, 20, 89)
+        console.log(ar1)
+        var str = ar.join(',')
+        console.log(str)
+        console.log(ar.reverse())
+        console.log('before  pop  ', ar)
+
+        console.log('pop last element ', ar.pop())
+        console.log('after pop  ', ar)
+        ar.push(9999)
+        console.log('after push  ', ar)
+
+        console.log(ar.shift())// remove and return from first position
+        console.log('after shift  ', ar)
+        ar.unshift(10000); // unshift will add element at first position
+        console.log('after unshift  ', ar)
+
+        var ar1 = new Array("linux", "unix", "mac", "window")
+  
+        ar1.splice(2, 1)
+        console.log('remove 1 element from 2nd position ', ar1)
+        ar1.splice(3, 'arch linux', 'ubuntu linux', 'lubuntu', 'mandriva')
+        console.log('add  4 element at  3rd  position ', ar1)
+
+        ar1.sort()
+        console.log('sorted array', ar1)
+
+        myarr = [11, 2, 1, 33, 4, 3]
+        console.log('unsorted array', myarr)
+
+        function mysort(a, b) {
+            return a - b
+        }
+
+        myarr.sort(mysort)
+        console.log('sorted array', myarr)
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
