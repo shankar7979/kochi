@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <script>
+
+       function addition(a,b){
+        return a+b
+       }
+
+       function calculation(message,callback){
+        console.log('message is '+message)
+        console.log('callback will execute later'+callback)
+       }
+
+       calculation("hello good morning", addition(11,22))
+
+       setTimeout(function(){
+        alert('alarm ringing')
+       },5000)
+
+       setInterval(function(){
+          document.write("<br>"+new Date().toLocaleTimeString())
+       },1000)
+
+       //clearTimeout(10)
+    </script>
+    
+</body>
+</html>

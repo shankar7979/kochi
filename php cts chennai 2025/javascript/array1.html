@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script>
+
+        var ar1 = [11, 2, 11, 3, 4, 55, 6]
+
+        // below for loop will give the index
+        console.log('for in loop')
+        for (var key in ar1) {
+            console.log(ar1[key])
+        }
+
+        console.log('for of  loop or for each loop ')
+        for (var element of ar1) {
+            console.log(element)
+        }
+
+        var user = JSON.parse('{"userid":8987998,"username":"surendra kumar","userlocation":"chennai"}');
+
+        alert(JSON.stringify(user))
+
+
+        var insurance = [
+            { "id": 788787545, "name": "heath insurance", "premium": 7000, "maturity": 10 },
+            { "id": 788787542, "name": "home insurance", "premium": 9000, "maturity": 11 },
+            { "id": 788787541, "name": "car insurance", "premium": 8000, "maturity": 7 },
+            { "id": 788787544, "name": "wealth insurance", "premium": 10000, "maturity": 15 },
+            { "id": 788787546, "name": "retirement insurance", "premium": 5000, "maturity": 14 },
+            { "id": 788787549, "name": "travel insurance", "premium": 1100, "maturity": 1 },
+        ]
+
+        function display1() {
+            var x = `<style>table,tr,td{border:solid blue}</style>`
+            x = x + `<table><tr style='border:solid'><th>id</th><th>name</th><th>premium</th><th>maturity</th></tr>`
+
+            for (var element of insurance) {
+                x = x + `<tr style='border:solid'><td>${element.id}</td><td> ${element.name} </td><td>${element.premium}</td><td> ${element.maturity}</td></tr>`
+            }
+            x = x + `</table>`
+            document.getElementById('id').innerHTML = x
+        }
+        function display() {
+            for (const element of insurance) {
+                console.log(element.id + "," + element.name + "," + element.premium + "," + element.maturity)
+            }
+        }
+        //console.log('data without sorting')
+        //display()
+        function sortById(a, b) {
+            return a.id - b.id
+        }
+        // insurance.sort(sortById)
+        //console.log('data  sorting by id ')
+        //display()
+
+        function sortByIdandDisplay() {
+            insurance.sort(sortById)
+            display1()
+        }
+
+    </script>
+    <style>
+        .col {
+            width: 100%;
+            float: left;
+            margin-top: 5pt;
+        }
+
+        button {
+            width: 150pt;
+        }
+
+        .data {
+            border: solid;
+            padding: 30pt;
+            background-color: beige;
+            width: 40%;
+            height: 200pt;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="margin-left: 300pt;">
+        <div id="id" class="data">
+
+        </div>
+
+        <div class="col">
+            <button onclick="display1()">display data</button>
+        </div>
+        <div class="col">
+            <button onclick="sortByIdandDisplay()">sort by id(ASC)</button>
+            <button>sort by id(DESC)</button>
+        </div>
+
+        <div class="col">
+            <button>sort by name(ASC)</button>
+            <button>sort by name(DESC)</button>
+        </div>
+        <div class="col">
+            <button>sort by premium(ASC)</button>
+            <button>sort by premium(DESC)</button>
+        </div>
+
+        <div class="col">
+            <button>sort by maturity(ASC)</button>
+            <button>sort by maturity(DESC)</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

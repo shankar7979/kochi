@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script>
+
+        var addition=function(a,b){
+            return a+b
+        }
+        var subtraction=function(a,b){
+            return a-b
+        }
+        
+        var multiplication=function(a,b){
+            return a*b
+        }
+
+        var a=20
+        var b=10
+
+        console.log(`no1 is ${a}\nno2is ${b} `)
+        console.log(`sum  of ${a} and  ${b}  is`, addition(a,b))
+        console.log(`subraction  of ${a} and  ${b}  is`, subtraction(a,b))
+        console.log(`multiplication   of  the result of addition and subtraction `, multiplication(addition(a,b),subtraction(a,b)))
+        
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script>
+        class Customer {
+            // constructor() {     // default constructor 
+            //     this.id = 900909
+            //     this.name = 900909
+            //     this.salary = 900909
+            //}
+            // overloaded constructor
+            constructor(id,name,salary) {
+                this.id = id
+                this.name = name
+                this.salary = salary
+            }
+
+            display() {
+                console.log('customer information')
+                console.log('\tid' + this.id)
+                console.log('\tname' + this.name)
+                console.log('\tsalary' + this.salary)
+            }
+        }
+        // var cust = new Customer()
+        var cust = new Customer(878787,'deepak kumar',90000)
+        cust.display()
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

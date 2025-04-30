@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <script>
+     const welcome=function(){
+        console.log("welcome")
+     }
+     
+    //  welcome=function(){
+    //     console.log("greeting")
+    //  }
+
+     welcome()
+
+
+     var user={
+              "id":809099,
+              "name":'amitesh',
+            //   display:function(){ // es5
+              display(){
+               console.log(' id is '+user.id)
+               console.log(' name is '+user.name)
+              }
+     }
+     user.display()
+    </script>
+</body>
+</html>

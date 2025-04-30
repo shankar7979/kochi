@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <script>
+        var book=[
+        {"isbn":7677667,"bname":"beginner javascript","author":"s k sharma", "cost":1200},
+        {"isbn":7677668,"bname":"advanced javascript","author":"aman sharma", "cost":700},
+        {"isbn":7677669,"bname":"javascript with es6","author":"suresh varma", "cost":2100},
+        {"isbn":7677661,"bname":"javascript for web development","author":"p k  nayar", "cost":1900},
+        {"isbn":7677662,"bname":"javascript for react developer","author":"jagdish sinha", "cost":1400},
+        {"isbn":7677663,"bname":"javascript with php","author":"gauri choudhary", "cost":1800},
+        ]
+
+        alert(JSON.stringify(book))
+
+        document.write("<style>table,tr,td,th{border:solid}</style>")
+        document.write("<table><tr><th>Id</th><th>Name</th><th>Author</th><th>Cost</th></tr>")
+        for (var index = 0; index < book.length; index++) {
+            document.write('<tr><td>'+book[index].isbn+'</td><td>'+book[index].bname+'</td><td>'+book[index].author+'</td><td>'+book[index].cost+"</td></tr>")
+        }
+        document.write("<table>")
+    </script>
+
+</body>
+</html>

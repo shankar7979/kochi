@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+     
+
+    </style>
+    <script>
+     var employee={
+                    "id":878787877,
+                    "name":'amit  kumar sharma',
+                    "salary":90000,
+                    "dob":'10-02-1988'
+     }
+
+     console.log(employee)
+     console.log(JSON.stringify(employee))
+     console.log("id is "+employee.id)
+     console.log("name is "+employee.name)
+     console.log("salary is "+employee.salary)
+     console.log("dob is "+employee.dob)
+
+     function displayEmp(){
+        document.getElementById('emp').innerHTML=JSON.stringify(employee)
+     }
+
+     function displayEmp1(){
+        
+        document.getElementById('emp1').innerHTML=
+        `<table style='border:solid;margin-left:250pt'><tr><th>Id</th><td>${employee.id}</td></tr><tr><th>name</th><td>${employee.name}</td></tr> <tr><th>salary</th><td>${employee.salary}</td></tr><tr><th>dob</th><td>${employee.dob}</td></tr></table>`
+     } 
+
+    </script>
+</head>
+<body onload="displayEmp(), displayEmp1()">
+    <div id="emp">
+            
+    </div>
+    
+    <div id="emp1">
+            
+    </div>
+
+</body>
+</html>
