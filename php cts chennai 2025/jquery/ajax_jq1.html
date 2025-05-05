@@ -37,11 +37,35 @@
                 }
                 )
             })
+
+            setInterval(function () {
+                $('#time').html(
+                    new Date().toLocaleTimeString()
+                );
+            }, 500);
+            setInterval(function () {
+                $('#date').html(
+                    new Date().toLocaleDateString()
+                );
+            }, 500);
+
+
         })
     </script>
 </head>
 
 <body>
+    <div class="container p-5 m-5">
+        <div class="row">
+            <div id="time" class="col-sm-6">
+               
+            </div>
+
+            <div id="date" class="col-sm-6 text-center" >
+            </div>
+        </div>
+        </div>
+
     <div class="container border border-primary p-5 m-5">
         <div class="row">
             <div id="id1" class="col-sm-6">
