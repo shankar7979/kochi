@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='script/jquery-3.7.1.min.js'>
+    </script>
+    <script>
+        // text() -- innerText of javascript
+        // html() -- innerHTML of javascript
+        $(function(){
+            alert($('#id1').text())
+            $('#id1').text('welcome to jquery')
+            $('#id1').text('<h1>welcome to jquery</h1>')
+            alert('using html method')
+
+            $('#id1').click(function(){
+                $('#id1').html('<h1>welcome to jquery</h1>')
+            })
+
+            $('#id1').hover(()=>{
+                $('#id1').html('<h1>welcome to jquery</h1>').css('border','solid red 20pt')
+            })
+           }
+        )
+    </script>
+
+</head>
+<body>
+   <div id="id1">
+      hello jquery
+   </div> 
+</body>
+</html>

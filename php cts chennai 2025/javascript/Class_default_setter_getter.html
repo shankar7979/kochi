@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script>
+        class Animal {
+            constructor(type='animal'){
+            this.type = type
+        }
+        set type(val){
+            this._type=val
+        }
+        get type(){
+            return this._type
+        }
+    }
+
+    // animal=new Animal('animal')
+    animal=new Animal('bird')
+    
+     console.log('type is '+animal.type)
+
+   // using map 
+
+   var ar=[1,2,3,4,5]
+    console.log(ar)
+    
+    ar1=ar.map(function(a){
+          return a*a
+    })
+    console.log('using map  '+ar1)
+    
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='script/jquery-3.7.1.min.js'>
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+    <script>
+        $(() => {
+            $('#btn1').click(() => {
+                $('p').hide()
+            })
+            $('#btn2').click(() => {
+                $('p').show()
+            })
+            $('#btn3').click(() => {
+                $('.myclass').hide()
+            })
+        })
+    </script>
+    <style>
+        .myclass{
+            text-decoration: underline;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <div class="container bg-info w-75 border p-5 m-5">
+        <p>This is paragraph 1</p>
+        <p class="myclass">This is paragraph 2</p>
+        <p>This is paragraph 3</p>
+
+        <button type="button" id="btn1" class="btn btn-primary">hide</button>
+        <button type="button" id="btn2" class="btn btn-primary">show</button>
+        <button type="button" id="btn3" class="btn btn-primary">hide 2nd para</button>
+    </div>
+</body>
+
+</html>

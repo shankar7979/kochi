@@ -6,7 +6,15 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <style>
+        .col {
+            float: left;
+            width: 30%;
+            border: inset 20pt blueviolet;
+            padding: 30pt;
+            margin-left: 20pt;
+        }
+    </style>
     <script>
         class Customer {
             // constructor() {     // default constructor 
@@ -15,7 +23,7 @@
             //     this.salary = 900909
             //}
             // overloaded constructor
-            constructor(id,name,salary) {
+            constructor(id, name, salary) {
                 this.id = id
                 this.name = name
                 this.salary = salary
@@ -29,13 +37,59 @@
             }
         }
         // var cust = new Customer()
-        var cust = new Customer(878787,'deepak kumar',90000)
+        var cust = new Customer(878787, 'deepak kumar', 90000)
         cust.display()
+
+        class DailyCustomer extends Customer {
+            constructor(id, name, salary, location, city, state) {
+                super(id, name, salary);
+                this.location = location
+                this.city = city;
+                this.state = state;
+            }
+            display() {
+                super.display();
+                console.log('id ..' + this.id)
+                console.log('location ' + this.location)
+                console.log('city ' + this.city)
+                console.log('state ' + this.state)
+            }
+        }
+        dailycustomer1 = new DailyCustomer(78877898, 'suman kumar', 20000, 'siruseri', 'chennai', 'tamilnadu')
+        dailycustomer1.display()
+        console.log(dailycustomer1.id + " is id ...")
+        console.log(dailycustomer1.name + " is name ...")
+
+        customer = function () {
+            document.getElementById('customer').innerHTML = `<style>table,tr,th,td{border:solid} </style><table><tr><th>id</th><td>${cust.id}</td></tr><tr><th>name</th><td>${cust.name}</td></tr>
+            <tr><th>salary</th><td>${cust.salary}</td></tr></table>
+            `
+        }
+
+        dailycustomer = function () {
+            document.getElementById('dailycustomer').innerHTML =
+                `<style>table,tr,th,td{border:solid} </style>
+                <table>
+             <tr><th>id</th><td>${dailycustomer1.id}</td></tr>
+           <tr><th>name</th><td>${dailycustomer1.name}</td></tr>
+         <tr><th>salary</th><td>${dailycustomer1.salary}</td></tr>
+         <tr><th>location</th><td>${dailycustomer1.location}</td></tr>
+         <tr><th>city</th><td>${dailycustomer1.city}</td></tr>
+            <tr><th>state</th><td>${dailycustomer1.state}</td></tr>
+            </table>`
+        }
+
+
     </script>
 </head>
 
 <body>
-
+    <div id='customer' class="col" onclick="customer()">
+        customer
+    </div>
+    <div id="dailycustomer" class="col" onclick="dailycustomer()">
+        dailycustomer
+    </div>
 </body>
 
 </html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    <script>
+        var addition = function (a, b) {
+            return a + b
+        }
+
+        var addition1 = (a, b) => a + b
+        var subtraction = (a, b) => a - b
+        console.log('addition is ' + addition1(11, 22))
+        console.log('subtraction is ' + subtraction(11, 22))
+
+        var ar = [2, 3, 1, 5, 4]
+        console.log(ar)
+
+        // ar1 = ar.map(function (a) {
+        //     return a * a
+        // })
+        ar1 = ar.map((a)=> a * a)
+        
+        console.log('using map  ' + ar1)
+        // ar.sort(function(a,b){
+        //     return a-b
+        // })
+
+        ar.sort((a,b)=>a-b)
+        console.log('after sort  ' + ar)
+      
+        // filter elements which are even and display it
+        // ar2=ar.filter(function(a){
+        //     return (a%2==0);
+        // })
+
+        ar2=ar.filter((a)=>a%2==0)
+
+        console.log('even number using filters  '+ar2)
+
+        // var sum = ar.reduce(function (a, b) {
+        //         return a + b
+        //     })
+
+        // var mul=ar.reduce(function(a,b){
+        //     return a*b
+        //   })
+
+          var sum = ar.reduce((a,b)=>a+b)  
+          var mul = ar.reduce((a,b)=>a*b)  
+
+        console.log('sum is '+sum)
+        console.log('multiplication is '+mul)
+
+        setInterval(() => {
+            console.log('time  '+new Date().toLocaleTimeString())
+        }, 1000);
+
+
+    </script>
+
+</body>
+
+</html>
