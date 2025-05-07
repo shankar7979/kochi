@@ -205,7 +205,7 @@ insert into product_order1 values(8,6,200015);
 - cross join 
  select * from product1, product_order1;
 -- inner join  old sql syntax 
-  list of product and order for which order has been placed
+--  list of product and order for which order has been placed
    
   select * from product1, product_order1 where product1.pid=product_order1.product_id;
 -- inner join  old sql syntax using alias 
@@ -213,8 +213,130 @@ insert into product_order1 values(8,6,200015);
 
 -- inner join  new sql(ansi sql) syntax
   
-   select * from product1 p inner join   product_order1 o on  p.pid=o.product_id; 
+   select * from product1 p inner join   product_order1 o on  
+   p.pid=o.product_id; 
   
+  use db2;
+ 
+ -- left  join  new sql(ansi sql) syntax
+   -- list of product for which order has been placed and not placed   
+   select * from product1 p left join   product_order1 o on 
+   p.pid=o.product_id; 
+
+ -- list of product for which order has been  not placed   
+   select * from product1 p left join   product_order1 o on 
+   p.pid=o.product_id  where  o.product_id is null; 
+ 
+  -- list of product for which order has been   placed   
+   select * from product1 p left join   product_order1 o on 
+   p.pid=o.product_id  where  o.product_id is  not null; 
+ 
+    select * from product1 p inner join   product_order1 o on  
+   p.pid=o.product_id; 
+   
+ select p.pid, p.cost,p.pname, o.order_id, o.qty from product1 p inner join   product_order1 o on  
+   p.pid=o.product_id; 
+   
+ select p.pid, p.cost,p.pname, o.order_id, o.qty from product1 p left join   product_order1 o on 
+   p.pid=o.product_id  where  o.product_id is  not null;
+
+-- right join 
+
+ select p.pid, p.cost,p.pname, o.order_id, o.qty from product1 p right join   product_order1 o on 
+   p.pid=o.product_id;
+   
+ select p.pid, p.cost,p.pname, o.order_id, o.qty from product1 p right join   product_order1 o on 
+   p.pid=o.product_id where o.product_id is not null;
+   
+  select p.pid, p.cost,p.pname, o.order_id, o.qty from product1 p right join   product_order1 o on 
+   p.pid=o.product_id where p.pid is not null;  
+ -- sub query  
+ 
+ select * from employee;
+  select max(salary) from employee;
+   --   outer query                      inner query 
+  select * from employee where salary=(select max(salary) from employee);
+ --  inner query gets executed, give result , outer query will execute using 
+ -- inner query result 
+ select * from employee where salary=(select min(salary) from employee);
+ 
+  select * from customer where city ='mumbai' or city='chennai';
+  select * from customer where city  in('mumbai' ,'chennai');
+   
+
+ -- list of all product for which order has been placed 
+ select p.pid, p.cost,p.pname, o.order_id, o.qty from product1 p inner join   product_order1 o on  
+   p.pid=o.product_id; 
+ 
+ select * from product1   where pid in( select product_id from 
+ product_order1);
+ 
+ -- list of all product for which order has not been placed 
+
+   select * from product1 p left join   product_order1 o on 
+   p.pid=o.product_id  where  o.product_id is null; 
+
+select * from product1   where pid not in( select product_id from 
+ product_order1);
+ 
+ select * from product1   where pid in( select product_id from 
+ product_order1);
+  
+ select pid from product1   where  exists(select product_id from 
+ product_order1);
+   
+select pid from product1   where not exists(select product_id from 
+ product_order1);
+
+select * from product1   where pid >any( select product_id from 
+ product_order1);
+ 
+select * from product1   where pid <all( select product_id from 
+ product_order1); 
+
+select * from product1   where pid <all( select product_id from 
+ product_order1 where cost between 700 and 1200);    
+
+-- union 
+ create table product2 as select * from product1;
+  -- will create table with data 
+    
+create table product3 as select * from product1 where 1>100;
+  -- will create table without  data 
+delete from product2 where pid>20002;  
+insert into product2 values(9002,50, 'biscuit');
+insert into product2 values(9003,70, 'chocalate');
+insert into product2 values(9003,370, 'pizza');
+insert into product2 values(9004,150, 'burger');
+
+ select * from product1 union select * from product2;
+ -- it will remove duplicates 
+ select * from product1 union all select * from product2;
+ -- it will allow duplicates 
+
+-- rank()
+alter table customer add salary float;
+ update customer set salary=75000 where id=76767767;
+  select * from customer;
+   select * from customer;
+-- +----------+---------------+-----------+-------------+--------+
+-- | id       | name          | city      | state       | salary |
+-- +----------+---------------+-----------+-------------+--------+
+-- | 76767761 | amit kumar    | chennai   | tamil nadu  |  50000 |
+-- | 76767762 | sumit kumar   | mumbai    | maharastra  |  54000 |
+-- | 76767763 | pardip kumar  | madurai   | tamil nadu  |  59000 |
+-- | 76767764 | saumesh kumar | new delhi | delhi       |  45000 |
+-- | 76767767 | veeresh kumar | chennai   | tamil nadu  |  75000 |
+-- | 76767768 | kundan kumar  | kolkotta  | west bengal |  15000 |
+-- | 76767769 | rahul kumar   | mumbai    | maharastra  |  19000 |
+-- | 76767790 | dheeraj kumar | kolkotta  | west bengal |  41000 |
+-- | 76767792 | rahul kumar   | new delhi | delhi       |  46000 |
+-- +----------+---------------+-----------+-------------+--------+
  
  
- 
+  select id, salary, avg(salary) over(partition by city), city from customer;
+  
+  select id, salary, avg(salary) over(partition by city order by id ), city from customer;
+  
+   select id, salary,  rank() over(partition by city order by id ), city from customer;
+   
