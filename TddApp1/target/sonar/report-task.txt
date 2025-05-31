@@ -1,6 +1,0 @@
-projectKey=com.cts:TddApp1
-serverUrl=http://localhost:5000
-serverVersion=25.1.0.102122
-dashboardUrl=http://localhost:5000/dashboard?id=com.cts%3ATddApp1
-ceTaskId=4bf0096d-4114-47d2-9303-cb1fcd9eae3c
-ceTaskUrl=http://localhost:5000/api/ce/task?id=4bf0096d-4114-47d2-9303-cb1fcd9eae3c
